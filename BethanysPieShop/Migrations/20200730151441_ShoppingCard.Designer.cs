@@ -4,14 +4,16 @@ using BethanysPieShop.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BethanysPieShop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200730151441_ShoppingCard")]
+    partial class ShoppingCard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,9 +248,9 @@ namespace BethanysPieShop.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BethanysPieShop.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("BethanysPieShop.Models.ShoppingCardItem", b =>
                 {
-                    b.Property<int>("ShoppingCartItemId")
+                    b.Property<int>("ShoppingCardItemId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -259,14 +261,14 @@ namespace BethanysPieShop.Migrations
                     b.Property<int?>("PieId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShoppingCartId")
+                    b.Property<string>("ShoppingCardId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ShoppingCartItemId");
+                    b.HasKey("ShoppingCardItemId");
 
                     b.HasIndex("PieId");
 
-                    b.ToTable("ShoppingCartItems");
+                    b.ToTable("ShoppingCardItem");
                 });
 
             modelBuilder.Entity("BethanysPieShop.Models.Pie", b =>
@@ -278,7 +280,7 @@ namespace BethanysPieShop.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BethanysPieShop.Models.ShoppingCartItem", b =>
+            modelBuilder.Entity("BethanysPieShop.Models.ShoppingCardItem", b =>
                 {
                     b.HasOne("BethanysPieShop.Models.Pie", "Pie")
                         .WithMany()
