@@ -14,6 +14,7 @@ namespace BethanysPieShop.Models
             this._appDbContext = appDbContext;
         }
 
-        public IEnumerable<Category> Categories =>  _appDbContext.Categories;
+        public IEnumerable<Category> AllCategories =>  _appDbContext.Categories;
+
     }
 }
