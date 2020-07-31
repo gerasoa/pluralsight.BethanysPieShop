@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200731123052_Orders_semVirtual.cs" />
+    <Compile Remove="Migrations\20200731123052_Orders_semVirtual.Designer.cs" />
     <Compile Remove="ViewModels\PiesListViewModel.cs" />
   </ItemGroup>
 
